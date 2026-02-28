@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- 
+    - primary meta tags
+  -->
+  <title>Keofi - Great coffee good vibes</title>
+  <meta name="title" content="Keofi - Great coffee good vibes">
+  <meta name="description" content="This is a coffee shop html template made by codewithsadee">
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Merienda&family=Oswald:wght@300;400;500&family=Roboto:wght@400;500;700&display=swap"
+    rel="stylesheet">
+
+  <!-- 
+    - preload images
+  -->
+  <link rel="preload" as="image" href="./assets/images/hero-banner.jpg">
+
+</head>
+<body>
+      <header class="header">
+
+    <div class="header-top">
+      <div class="container">
+
+        <p class="header-top-text">
+          <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
+          <span class="span">Opening Hours :</span> 08:00 Am - 09:00 Pm
+        </p>
+
+        <ul class="social-list">
+
+          <li>
+            <a href="https://www.facebook.com/keofiusa/" class="social-link">
+              <ion-icon name="logo-facebook"></ion-icon>
+            </a>
+          </li>
+
+        
+
+          <li>
+            <a href="https://www.instagram.com/keofiusa/" class="social-link">
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+          </li>
+
+         
+
+        </ul>
+
+        <p class="header-top-text">
+          <ion-icon name="location-outline" aria-hidden="true"></ion-icon>
+          <span class="span">Location :</span> 55 Main Street, New York
+        </p>
+
+      </div>
+    </div>
+
+    <div class="header-bottom" data-header>
+      <div class="container">
+
+        <a href="#" class="logo">
+          <img src="./assets/images/logo.svg" width="216" height="80" alt="keofi home" class="w-100">
+        </a>
+
+        <nav class="navbar" data-navbar>
+
+          <ul class="navbar-list">
+
+            <li>
+              <a href="index.html" class="navbar-link" data-nav-link>Home</a>
+            </li>
+
+            <li>
+              <a href="about.html" class="navbar-link" data-nav-link>About</a>
+            </li>
+
+            <li>
+              <a href="services.html" class="navbar-link" data-nav-link>Menu</a>
+            </li>
+
+            <li>
+              <a href="blog.html" class="navbar-link" data-nav-link>Blog</a>
+            </li>
+
+            <li>
+              <a href="contact.html" class="navbar-link" data-nav-link>Contacts</a>
+            </li>
+
+          </ul>
+
+          <button  class="btn btn-primary">Book A Table</button>
+
+        </nav>
+
+        <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
+          <span class="span"></span>
+          <span class="span"></span>
+        </button>
+
+      </div>
+    </div>
+
+  </header>
+
+<div class="booking-modal" id="bookingModal">
+  <div class="modal-content">
+    <button class="close-btn" onclick="toggleModal()">&times;</button>
+    
+    <h2 class="h2 modal-title">Book Your Table</h2>
+    <p class="section-text">Experience the best Arabica coffee at Keofi.</p>
+
+    <form action="https://formspree.io/f/mnjbrraz" method="POST" class="modal-form">
+      <div class="input-wrapper">
+        <input type="text" name="name" placeholder="Full Name" required class="input-field">
+        <input type="email" name="email" placeholder="Email Address" required class="input-field">
+      </div>
+
+      <div class="input-wrapper">
+        <select name="coffee_type" id="coffeeSelect" class="input-field" onchange="updatePrice()" required>
+          <option value="" disabled selected>Select Coffee</option>
+          <option value="Americano" data-price="4.9">Americano Coffee - $4.9</option>
+          <option value="Espresso" data-price="4.9">Espresso Coffee - $4.9</option>
+          <option value="Cappuccino" data-price="2.8">Cappuccino Arabica - $2.8</option>
+          <option value="Cold-Coffee" data-price="6.0">Cold - Coffee - $6.0</option>
+        </select>
+        
+       <div class="price-tag-wrapper">
+  <span class="price-label">Total Amount:</span>
+  <span id="displayPrice" class="price-display">$0.0</span>
+  <input type="hidden" name="total_price" id="hiddenPrice">
+</div>
+      </div>
+
+      <div class="input-wrapper">
+        <input type="date" name="booking_date" class="input-field" required>
+        <input type="time" name="booking_time" class="input-field" required>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Confirm Booking</button>
+    </form>
+  </div>
+</div>
+
+<section class="section contact" id="contact" aria-labelledby="contact-label" 
+  style="background-image: url('https://www.transparenttextures.com/patterns/dark-matter.png');">
+  <div class="container">
+    
+    <div class="contact-card-v2">
+      <p class="section-subtitle text-center" data-reveal>Get In Touch</p>
+      <h2 class="h2 section-title text-center" id="contact-label" data-reveal>
+        Send A Message To Our Barista
+      </h2>
+
+      <form action="https://formspree.io/f/mnjbrraz" method="POST" class="contact-form-v2" data-reveal>
+        <div class="input-row">
+          <input type="text" name="name" placeholder="Full Name" required class="input-item">
+          <input type="email" name="email" placeholder="Email Address" required class="input-item">
+        </div>
+        
+        <textarea name="message" placeholder="Write your message here..." required class="input-item textarea"></textarea>
+        
+        <button type="submit" class="btn-submit">
+          <span class="span">Send Mail</span>
+          <ion-icon name="cafe-outline" aria-hidden="true"></ion-icon>
+        </button>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
